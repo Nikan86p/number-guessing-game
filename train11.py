@@ -18,6 +18,7 @@ a=randint(n,m)
 print(a)
 hint=input(f"Is it higher or lower or correct, {name}?\n")
 
+
 while True :
 
     while hint!="correct":
