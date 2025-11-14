@@ -15,17 +15,17 @@ def yes_input(y):
     n = 1
     m = 100
     name=input("What is your name??😃\n")
-    name="Mr."+name.capitalize()
+    name="Mr."+name.capitalize().strip()
     animated_print("Please guess a number between 1 to 100 !!!")
     Question=input("\n(Whenever you guessed , please enter Y):\n")
-    Question=Question.upper()
+    Question=Question.upper().strip()
 
 
 
     while Question!="Y":
             print("Please enter a valid alphabet!!😡")
             Question=input("\n(Whenever you guessed , please enter Y):\n")
-            Question=Question.upper()
+            Question=Question.upper().strip()
     if Question=="Y":
         a=randint(n,m)
         print("\n",a)
@@ -34,7 +34,7 @@ def yes_input(y):
 
 
 yes_input('Y')
-hint=input(f"Is it higher or lower or correct, {name}?\n")
+hint=input(f"Is it higher or lower or correct, {name}?\n").strip()
 while True :
     while hint!="correct":
     
@@ -42,14 +42,14 @@ while True :
             n=a+1
             a=randint(n,m)
             print(a)
-            hint=input(f"Is it higher or lower or correct, {name}?\n")
+            hint=input(f"Is it higher or lower or correct, {name}?\n").strip()
         elif hint=="lower":
             m=a-1
             a=randint(n,m)
             print(a)
-            hint=input(f"Is it higher or lower or correct, {name}?\n")
+            hint=input(f"Is it higher or lower or correct, {name}?\n").strip()
         else:
-            hint=input(f"Please enter a valid hint: higher or lower or correct, {name}?😡\n")
+            hint=input(f"Please enter a valid hint: higher or lower or correct, {name}?😡\n").strip()
     while hint=="correct":
         animated_print(f"\nBravo!, you found it!👏\nYou are a true winner🥇, {name}!!!\n")
         print("\nthe number was",a)
@@ -57,12 +57,12 @@ while True :
         break
     
     animated_print(f"\nDo you want to play again, {name}??\n")
-    answer=input("Enter Y for Yes and N for No: ")
+    answer=input("Enter Y for Yes and N for No: ").strip()
     if answer.upper()=='Y':
         animated_print("\nGreat! Let's play again.\nRestarting the game...✨\n\n")
         sleep(3)
         yes_input('Y')
-        hint=input(f"Is it higher or lower or correct, {name}?\n")
+        hint=input(f"Is it higher or lower or correct, {name}?\n").strip()
         continue
     elif answer.upper()=='N':
         animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
@@ -74,7 +74,7 @@ while True :
                 animated_print("\nGreat! Let's play again.\nRestarting the game...✨\n\n")
                 sleep(3)
                 yes_input('Y')
-                hint = input(f"Is it higher or lower or correct, {name}?\n")
+                hint = input(f"Is it higher or lower or correct, {name}?\n").strip()
                 break  
             elif answer == 'N':
                 animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
