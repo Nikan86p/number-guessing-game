@@ -14,65 +14,67 @@ n=1
 m=100
 name=input("What is your name??😃\n")
 name="Mr."+name.capitalize()
-a=randint(n,m)
-print(a)
-hint=input(f"Is it higher or lower or correct, {name}?\n")
+animated_print("Please guess a number between 1 to 100 !!!")
+Question=input("\n(Whenever you guessed , please enter Y):\n")
+Question=Question.upper()
 
-
-while True :
-
-    while hint!="correct":
-    
-        if hint=="higher":
-            n=a+1
-            a=randint(n,m)
-            print(a)
-            hint=input(f"Is it higher or lower or correct, {name}?\n")
-
-        elif hint=="lower":
-            m=a-1
-            a=randint(n,m)
-            print(a)
-            hint=input(f"Is it higher or lower or correct, {name}?\n")
-        else:
-            hint=input(f"Please enter a valid hint: higher or lower or correct, {name}?😡\n")
-
-
-    while hint=="correct":
-        animated_print(f"\nBravo!, you found it!👏\nYou are a true winner🥇, {name}!!!\n")
-        print("\nthe number was",a)
-        system("afplay /Users/nikan86p/Downloads/Nikan-mabani/Drums.mp3")
-        break
-    
-    animated_print(f"\nDo you want to play again, {name}??\n")
-    answer=input("Enter Y for Yes and N for No: ")
-    
-    if answer.upper()=='Y':
-        animated_print("\nGreat! Let's play again!\nResetting the game...✨\n\n")
-        sleep(3)
-        n=1
-        m=100
-        a=randint(n,m)
-        print(a)
-        hint=input(f"Is it higher or lower or correct, {name}?\n")
-        continue
-    elif answer.upper()=='N':
-        animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
-        break
-    else:   
-        while True:
-            answer = input("\nInvalid input! Please enter Y or N: 😡").strip().upper()
-            if answer == 'Y':
-                animated_print("\nGreat! Let's play again.\nResetting the game...✨\n\n")
-                sleep(3)
-                n = 1
-                m = 100
-                a = randint(n, m)
+while Question!="Y":
+        print("Please enter a valid alphabet!!😡")
+        Question=input("\n(Whenever you guessed , please enter Y):\n")
+        Question=Question.upper()
+if Question=="Y":
+    a=randint(n,m)
+    print(a)
+    hint=input(f"Is it higher or lower or correct, {name}?\n")
+    while True :
+        while hint!="correct":
+        
+            if hint=="higher":
+                n=a+1
+                a=randint(n,m)
                 print(a)
-                hint = input(f"Is it higher or lower or correct, {name}?\n")
-                break  
-            elif answer == 'N':
-                animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
-                exit()  
+                hint=input(f"Is it higher or lower or correct, {name}?\n")
+            elif hint=="lower":
+                m=a-1
+                a=randint(n,m)
+                print(a)
+                hint=input(f"Is it higher or lower or correct, {name}?\n")
             else:
-                continue  
+                hint=input(f"Please enter a valid hint: higher or lower or correct, {name}?😡\n")
+        while hint=="correct":
+            animated_print(f"\nBravo!, you found it!👏\nYou are a true winner🥇, {name}!!!\n")
+            print("\nthe number was",a)
+            system("afplay /Users/nikan86p/Downloads/Nikan-mabani/Drums.mp3")
+            break
+        
+        animated_print(f"\nDo you want to play again, {name}??\n")
+        answer=input("Enter Y for Yes and N for No: ")
+        if answer.upper()=='Y':
+            animated_print("\nGreat! Let's play again!\nResetting the game...✨\n\n")
+            sleep(3)
+            n=1
+            m=100
+            a=randint(n,m)
+            print(a)
+            hint=input(f"Is it higher or lower or correct, {name}?\n")
+            continue
+        elif answer.upper()=='N':
+            animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
+            break
+        else:   
+            while True:
+                answer = input("\nInvalid input! Please enter Y or N: 😡").strip().upper()
+                if answer == 'Y':
+                    animated_print("\nGreat! Let's play again.\nRestarting the game...✨\n\n")
+                    sleep(3)
+                    n = 1
+                    m = 100
+                    a = randint(n, m)
+                    print(a)
+                    hint = input(f"Is it higher or lower or correct, {name}?\n")
+                    break  
+                elif answer == 'N':
+                    animated_print("\nThank you for playing the game! Goodbye!👋\n\n")
+                    exit()  
+                else:
+                    continue  
